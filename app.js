@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
-const app =  express();
+const app =  express(); //instance
 const mongoose = require('mongoose');
 const seedDB = require('./seed');
-
+const productRoutes = require('./routes/productRoutes')
 
 mongoose.connect('mongodb://127.0.0.1:27017/titans')
 .then(function(){
@@ -19,6 +19,7 @@ app.set('views' , path.join(__dirname , 'views'));
 app.use(express.static(path.join(__dirname , 'public')));
 
 // seedDB()
+app.use(productRoutes)
 
 const PORT = 8080;
 app.listen(PORT , function(){

@@ -13,5 +13,19 @@
         <h1> <%=foundProduct.price%> </h1>
         <h1> <%=foundProduct.desc%> </h1>
         <a href="/products">Back</a>
+
+    <hr>
+    <form action="/products/<%=foundProduct._id%>/review" method="POST">
+        <h1>Adding Reviews</h1>
+        <div>
+            <label for="rate">Rating:</label>
+            <input type="range" min="0" max="5" name="rating" id="rate">
+        </div>
+        <div>
+            <label for="comm">Comment:</label>
+            <textarea name="comment" id="comm"></textarea>
+        </div>
+        <button type="submit">Add review</button>
+    </form>
 </body>
 </html>

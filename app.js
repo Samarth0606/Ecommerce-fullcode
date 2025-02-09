@@ -4,6 +4,7 @@ const app =  express(); //instance
 const mongoose = require('mongoose');
 const seedDB = require('./seed');
 const productRoutes = require('./routes/productRoutes')
+const reviewRoutes = require('./routes/review')
 const methodOverride = require('method-override')
 
 mongoose.connect('mongodb://127.0.0.1:27017/titans')
@@ -23,6 +24,7 @@ app.use(methodOverride('_method'))
 
 // seedDB()
 app.use(productRoutes)
+app.use(reviewRoutes)
 
 const PORT = 8080;
 app.listen(PORT , function(){

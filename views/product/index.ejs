@@ -7,6 +7,12 @@
 </head>
 <body>
     <h1>All the Products</h1>
-    
+    <a href="/product/new">NEW</a>
+    <% for(let product of allProducts){ %>
+        <h1> <%=product.name%> </h1>
+        <img src="<%=product.img%>" alt="">
+        <h1> <%=product.price%> </h1>
+        <h1> <%=product.desc%> </h1>
+    <% } %>
 </body>
 </html>

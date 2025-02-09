@@ -17,6 +17,7 @@ app.set('view engine'  , 'ejs');
 app.set('views' , path.join(__dirname , 'views'));
 // static files
 app.use(express.static(path.join(__dirname , 'public')));
+app.use(express.urlencoded({extended:true}))//undefined na de body
 
 // seedDB()
 app.use(productRoutes)

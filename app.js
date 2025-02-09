@@ -4,6 +4,7 @@ const app =  express(); //instance
 const mongoose = require('mongoose');
 const seedDB = require('./seed');
 const productRoutes = require('./routes/productRoutes')
+const methodOverride = require('method-override')
 
 mongoose.connect('mongodb://127.0.0.1:27017/titans')
 .then(function(){
@@ -18,6 +19,7 @@ app.set('views' , path.join(__dirname , 'views'));
 // static files
 app.use(express.static(path.join(__dirname , 'public')));
 app.use(express.urlencoded({extended:true}))//undefined na de body
+app.use(methodOverride('_method'))
 
 // seedDB()
 app.use(productRoutes)

@@ -13,6 +13,11 @@
         <img src="<%=product.img%>" alt="">
         <h1> <%=product.price%> </h1>
         <h1> <%=product.desc%> </h1>
+        <a href="/products/<%=product._id%>">Show</a>
+        <a href="/products/<%=product._id%>/edit">Edit</a>
+        <form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+        </form>
     <% } %>
 </body>
 </html>
